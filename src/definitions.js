@@ -9,6 +9,11 @@
  */
 
 /**
+ * Definition for a card
+ * @typedef {{question: string, answer: string}} card
+ */
+
+/**
  * Definition for a deck
  * @typedef {{title: string, questions: question[]}} deck
  */

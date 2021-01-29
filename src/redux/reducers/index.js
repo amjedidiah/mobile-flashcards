@@ -6,7 +6,7 @@
  */
 const decks = (state = {}, {answer, question, title, type}) =>
   ({
-    SAVE_DECK_TITLE: {...state, [title]: {title, questions: []}},
+    SAVE_DECK: {...state, [title]: {title, questions: []}},
     ADD_CARD_TO_DECK: {
       ...state,
       [title]: {
