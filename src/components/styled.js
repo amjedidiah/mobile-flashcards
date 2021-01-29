@@ -2,8 +2,11 @@ import styled from 'styled-components/native';
 import {gray} from '../utils/colors';
 
 export const Button = styled.TouchableOpacity`
-  padding: 8px 20px;
-  border-radius: 1rem;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
   margin: 10px;
   width: 170px;
 `;
@@ -16,9 +19,15 @@ export const Container = styled.KeyboardAvoidingView`
 
 export const Input = styled.TextInput`
   border: 2px solid ${gray};
-  padding: 5px 10px;
-  margin: 10px 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   height: auto;
+  width: 170px;
+  border-radius: 10px
 `;
 
 export const InfoText = styled.Text`
@@ -28,15 +37,15 @@ export const InfoText = styled.Text`
 `;
 
 export const SubTitle = styled.Text`
-  margin-bottom: 30;
-  margin-top: 10;
+  margin-bottom: 30px;
+  margin-top: 10px;
   color: red;
   width: 170px;
   text-align: center;
 `;
 
 export const Title = styled.Text`
-  font-size: 1.2rem;
+  font-size: 29.4px;
   width: 170px;
   text-align: center;
 `;

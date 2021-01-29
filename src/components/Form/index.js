@@ -25,8 +25,8 @@ import {Input, SubTitle, Title} from '../styled';
  */
 const Form = ({title, inputs, buttons, subTitle, children}) => (
   <Layout>
-    {title && <Title>{title}</Title>}
-    {subTitle && <SubTitle>{subTitle}</SubTitle>}
+    <Title>{title}</Title>
+    <SubTitle>{subTitle}</SubTitle>
 
     {inputs.map(({name}) => (
       <Input
