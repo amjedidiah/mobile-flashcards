@@ -13,7 +13,6 @@ export const addCardToDeck = (title, {question, answer}) => ({
   answer,
 });
 
-
 /**
  * Saves a deck
  * @param {string} title

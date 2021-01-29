@@ -1,5 +1,6 @@
 // Module import
 import {createStore} from 'redux';
+import {persistStore} from 'redux-persist';
 
 // Combinereducers import
 import reducers from 'redux/reducers';
@@ -11,7 +12,9 @@ import middleware from 'redux/middleware';
  * Redux store
  * @type {store}
  */
-const store = createStore(reducers, middleware);
+export const store = createStore(reducers, middleware);
 
-// Store export
-export default store;
+/**
+ * @type {any}
+ */
+export const persistor = persistStore(store);

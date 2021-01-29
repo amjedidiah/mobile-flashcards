@@ -1,20 +1,21 @@
-/**
- * Decks reducer
- * @param {decks} state
- * @param {action} action
- * @return {decks}
- */
-const decks = (state = {}, {answer, question, title, type}) =>
-  ({
-    SAVE_DECK: {...state, [title]: {title, questions: []}},
-    ADD_CARD_TO_DECK: {
-      ...state,
-      [title]: {
-        ...state[title],
-        questions: [...state[title].questions, {question, answer}],
-      },
-    },
-  }[type] || state);
+// Module import
+import {combineReducers} from 'redux';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {persistReducer} from 'redux-persist';
 
-// decks reducer export
-export default decks;
+// Reducer imports
+import decks from 'redux/reducers/decks';
+
+/**
+ * @type {{key: string, storage: object, whitelist: string[]}}
+ */
+const persistConfig = {
+  key: 'root',
+  storage: AsyncStorage,
+  whitelist: ['decks'],
+};
+
+// Export combineReducers
+export default combineReducers({
+  decks: persistReducer(persistConfig, decks),
+});
