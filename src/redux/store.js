@@ -3,10 +3,10 @@ import {createStore} from 'redux';
 import {persistStore} from 'redux-persist';
 
 // Combinereducers import
-import reducers from 'redux/reducers';
+import reducers from './reducers';
 
 // Middleware import
-import middleware from 'redux/middleware';
+import middleware from './middleware';
 
 /**
  * Redux store

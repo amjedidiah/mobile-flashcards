@@ -11,7 +11,7 @@ const decks = (state = {}, {answer, question, title, type}) =>
       ...state,
       [title]: {
         ...state[title],
-        questions: [...state[title].questions, {question, answer}],
+        questions: [...(state[title]?.questions || []), {question, answer}],
       },
     },
   }[type] || state);

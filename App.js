@@ -4,7 +4,7 @@ import {PersistGate} from 'redux-persist/integration/react';
 import {View, Text} from 'react-native';
 
 // Store import
-import {persistor, store} from 'redux/store';
+import {persistor, store} from './src/redux/store';
 
 /**
  * App component

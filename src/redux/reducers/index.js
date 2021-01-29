@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {persistReducer} from 'redux-persist';
 
 // Reducer imports
-import decks from 'redux/reducers/decks';
+import decks from './decks';
 
 /**
  * @type {{key: string, storage: object, whitelist: string[]}}
