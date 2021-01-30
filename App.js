@@ -15,6 +15,8 @@ import {persistor, store} from './src/redux/store';
 import TabBarIcon from './src/components/TabBarIcon';
 import {Platform} from 'react-native';
 import {purple, white} from './src/utils/colors';
+import {setLocalNotification} from './src/redux/actions/notifications';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -45,10 +47,19 @@ const MyStack = () => (
 
 /**
  * App component
- * @return {object}
+ * @component
  */
-export default function App() {
-  return (
+class App extends React.Component {
+  /**
+   * @return {function}
+   */
+  componentDidMount = () => store.dispatch(setLocalNotification());
+
+
+  /**
+   * @return {object} - The UI DOM object
+   */
+  render = () => (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <NavigationContainer>
@@ -86,3 +97,5 @@ export default function App() {
     </Provider>
   );
 }
+
+export default App;

@@ -14,7 +14,7 @@ import middleware from './middleware';
  * @type {{key: string, storage: object, whitelist: string[]}}
  */
 const persistConfig = {
-  key: 'root',
+  key: 'FaskiSarahJalingo6048',
   storage: AsyncStorage,
   whitelist: ['decks'],
   timeout: null,

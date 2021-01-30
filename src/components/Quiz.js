@@ -7,7 +7,11 @@ import {getDeck, getDeckCardsCount} from '../redux/selectors';
 import {green, purple, red} from '../utils/colors';
 import Form from './Form';
 import {InfoText} from './styled';
-import {saveDeckScore, saveDeckProgress} from '../redux/actions/decks';
+import {
+  saveDeckScore,
+  saveDeckProgress,
+  quizCompleted,
+} from '../redux/actions/decks';
 
 /**
  * @component
@@ -24,6 +28,7 @@ class Quiz extends Component {
     deck: PropTypes.object,
     deckCardsCount: PropTypes.number,
     navigation: PropTypes.object,
+    quizCompleted: PropTypes.object,
     route: PropTypes.object,
     saveDeckScore: PropTypes.func,
     saveDeckProgress: PropTypes.func,
@@ -33,6 +38,7 @@ class Quiz extends Component {
     deck: {},
     deckCardsCount: 0,
     navigation: {},
+    quizCompleted: () => {},
     route: {},
     saveDeckScore: () => {},
     saveDeckProgress: () => {},
@@ -55,11 +61,13 @@ class Quiz extends Component {
 
     if (newCurrent >= this.props.deckCardsCount) {
       // Show score
-      console.log('Quiz e have end');
-      this.setState({
-        done: true,
-        subTitle: `out of ${(this.props.deck?.questions || []).length}`,
-      });
+      this.setState(
+          () => ({
+            done: true,
+            subTitle: `out of ${(this.props.deck?.questions || []).length}`,
+          }),
+          this.props.quizCompleted,
+      );
     } else {
       // Continue quiz
       this.props.navigation.push('Quiz', {
@@ -153,6 +161,8 @@ const mapStateToProps = ({decks}, {route}) => ({
   deckCardsCount: getDeckCardsCount(decks, route?.params?.title),
 });
 
-export default connect(mapStateToProps, {saveDeckScore, saveDeckProgress})(
-    Quiz,
-);
+export default connect(mapStateToProps, {
+  saveDeckScore,
+  saveDeckProgress,
+  quizCompleted,
+})(Quiz);

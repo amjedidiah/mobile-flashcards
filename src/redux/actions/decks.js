@@ -51,3 +51,5 @@ export const deleteDeck = (title) => ({
   type: DELETE_DECK,
   title,
 });
+
+export const quizCompleted = () => {};
