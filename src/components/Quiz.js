@@ -10,7 +10,6 @@ import {InfoText} from './styled';
 import {
   saveDeckScore,
   saveDeckProgress,
-  quizCompleted,
 } from '../redux/actions/decks';
 
 /**
@@ -28,7 +27,6 @@ class Quiz extends Component {
     deck: PropTypes.object,
     deckCardsCount: PropTypes.number,
     navigation: PropTypes.object,
-    quizCompleted: PropTypes.object,
     route: PropTypes.object,
     saveDeckScore: PropTypes.func,
     saveDeckProgress: PropTypes.func,
@@ -38,7 +36,6 @@ class Quiz extends Component {
     deck: {},
     deckCardsCount: 0,
     navigation: {},
-    quizCompleted: () => {},
     route: {},
     saveDeckScore: () => {},
     saveDeckProgress: () => {},
@@ -66,7 +63,6 @@ class Quiz extends Component {
             done: true,
             subTitle: `out of ${(this.props.deck?.questions || []).length}`,
           }),
-          this.props.quizCompleted,
       );
     } else {
       // Continue quiz
@@ -164,5 +160,4 @@ const mapStateToProps = ({decks}, {route}) => ({
 export default connect(mapStateToProps, {
   saveDeckScore,
   saveDeckProgress,
-  quizCompleted,
 })(Quiz);
