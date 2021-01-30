@@ -1,5 +1,5 @@
 import React from 'react';
-import {FontAwesome, Ionicons} from '@expo/vector-icons';
+import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import PropTypes from 'prop-types';
 
 /**
@@ -7,19 +7,19 @@ import PropTypes from 'prop-types';
  * @component
  * @return {object} - The UI DOM object
  */
-const TabBarIcon = ({screenName, tintColor}) =>
+const TabBarIcon = ({ screenName, tintColor }) =>
   ({
-    Home: <FontAwesome name="home" size={30} color={tintColor} />,
+    Home: <FontAwesome name="home" size={30} color={tintColor} />
   }[screenName] || <Ionicons name="add" size={30} color={tintColor} />);
 
 TabBarIcon.propTypes = {
   screenName: PropTypes.string,
-  tintColor: PropTypes.string,
+  tintColor: PropTypes.string
 };
 
 TabBarIcon.defaultProps = {
   screenName: '',
-  tintColor: '',
+  tintColor: ''
 };
 
 // TabBarIcon export

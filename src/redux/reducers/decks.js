@@ -1,4 +1,4 @@
-import {DELETE_DECK} from '../actions/types';
+import { DELETE_DECK } from '../actions/types';
 
 /**
  * Decks reducer
@@ -7,15 +7,15 @@ import {DELETE_DECK} from '../actions/types';
  * @return {decks}
  */
 const decks = (
-    state = {},
-    {answer, current, question, score, title, type},
+  state = {},
+  { answer, current, question, score, title, type }
 ) => {
   let newState = {};
 
   if (type === DELETE_DECK) {
     const removeProp = title;
     // eslint-disable-next-line no-unused-vars
-    const {[removeProp]: remove, ...rest} = state;
+    const { [removeProp]: remove, ...rest } = state;
 
     newState = rest;
   }
@@ -23,20 +23,20 @@ const decks = (
     {
       SAVE_DECK: {
         ...state,
-        [title]: {title, questions: [], current: 0, score: 0},
+        [title]: { title, questions: [], current: 0, score: 0 }
       },
       DELETE_DECK: newState,
       ADD_CARD_TO_DECK: {
         ...state,
         [title]: {
           ...state[title],
-          questions: [...(state[title]?.questions || []), {question, answer}],
-        },
+          questions: [...(state[title]?.questions || []), { question, answer }]
+        }
       },
       SAVE_DECK_PROGRESS: {
         ...state,
-        [title]: {...state[title], current, score},
-      },
+        [title]: { ...state[title], current, score }
+      }
     }[type] || state
   );
 };

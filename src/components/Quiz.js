@@ -7,7 +7,7 @@ import {getDeck, getDeckCardsCount} from '../redux/selectors';
 import {green, purple, red} from '../utils/colors';
 import Form from './Form';
 import {InfoText} from './styled';
-import {saveDeckScore, saveDeckProgress} from '../redux/actions/decks';
+import {saveDeckProgress} from '../redux/actions/decks';
 
 /**
  * @component
@@ -25,7 +25,6 @@ class Quiz extends Component {
     deckCardsCount: PropTypes.number,
     navigation: PropTypes.object,
     route: PropTypes.object,
-    saveDeckScore: PropTypes.func,
     saveDeckProgress: PropTypes.func,
   };
 
@@ -34,7 +33,6 @@ class Quiz extends Component {
     deckCardsCount: 0,
     navigation: {},
     route: {},
-    saveDeckScore: () => {},
     saveDeckProgress: () => {},
   };
 
@@ -153,6 +151,6 @@ const mapStateToProps = ({decks}, {route}) => ({
 });
 
 export default connect(mapStateToProps, {
-  saveDeckScore,
+  
   saveDeckProgress,
 })(Quiz);

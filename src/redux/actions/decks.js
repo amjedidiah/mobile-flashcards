@@ -2,7 +2,7 @@ import {
   ADD_CARD_TO_DECK,
   DELETE_DECK,
   SAVE_DECK,
-  SAVE_DECK_PROGRESS,
+  SAVE_DECK_PROGRESS
 } from './types';
 
 /**
@@ -11,11 +11,11 @@ import {
  * @param {card} card
  * @return {actionCreator}
  */
-export const addCardToDeck = (title, {question, answer}) => ({
+export const addCardToDeck = (title, { question, answer }) => ({
   type: ADD_CARD_TO_DECK,
   title,
   question,
-  answer,
+  answer
 });
 
 /**
@@ -25,7 +25,7 @@ export const addCardToDeck = (title, {question, answer}) => ({
  */
 export const saveDeck = (title) => ({
   type: SAVE_DECK,
-  title,
+  title
 });
 
 /**
@@ -39,7 +39,7 @@ export const saveDeckProgress = (title, current, score) => ({
   type: SAVE_DECK_PROGRESS,
   title,
   current,
-  score,
+  score
 });
 
 /**
@@ -49,7 +49,7 @@ export const saveDeckProgress = (title, current, score) => ({
  */
 export const deleteDeck = (title) => ({
   type: DELETE_DECK,
-  title,
+  title
 });
 
 export const quizCompleted = () => {};

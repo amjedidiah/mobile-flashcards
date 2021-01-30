@@ -5,7 +5,7 @@
  */
 export const getDecks = (decks) => {
   // eslint-disable-next-line no-unused-vars
-  const {_persist, ...rest} = decks;
+  const { _persist, ...rest } = decks;
   return Object.values(rest);
 };
 

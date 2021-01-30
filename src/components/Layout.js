@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Container} from './styled';
+import { Container } from './styled';
 
-const Layout = ({children}) => <Container>{children}</Container>;
+const Layout = ({ children }) => <Container>{children}</Container>;
 
 Layout.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]),
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.array])
 };
 
 Layout.defaultProps = {
-  children: <></>,
+  children: <></>
 };
 
 export default Layout;

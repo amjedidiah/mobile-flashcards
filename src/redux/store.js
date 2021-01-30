@@ -1,8 +1,8 @@
 // Module import
-import {createStore} from 'redux';
-import {persistStore} from 'redux-persist';
+import { createStore } from 'redux';
+import { persistStore } from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
-import {persistReducer} from 'redux-persist';
+import { persistReducer } from 'redux-persist';
 
 // Combinereducers import
 import reducers from './reducers';
@@ -17,7 +17,7 @@ const persistConfig = {
   key: 'FaskiSarahJalingo6048',
   storage: AsyncStorage,
   whitelist: ['decks'],
-  timeout: null,
+  timeout: null
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
