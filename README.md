@@ -1,4 +1,6 @@
-# My Universal React Project
+# Mobile FlashCards
+
+> Create flashcards to prepare for tests, interviews, presentations and more
 
 <p>
   <!-- iOS -->
@@ -15,30 +17,79 @@
   </a>
 </p>
 
-## 🚀 How to use
+## Table of Content
 
-- Install packages with `yarn` or `npm install`.
-  - If you have native iOS code run `npx pod-install`
-- Run `yarn start` to start the bundler.
+- [Project Info](#project-info)
+- [Quick Start](#quick-start)
+- [Contributing](#contributing)
+- [License](#license)
+- [About Me](#about-me)
+
+## Project Info
+
+### Project Overview
+
+This apps works as so:
+
+- Create a question and the answer from a fact you want to memorise or don't want to forget and save it to a flashcard.
+
+- Refer to the flashcard whenever.
+
+- Group your flashcards by creating multiple stacks
+
+### Why this project?
+
+> To gain an understanding of how to use React Native to build an iOS and Android application
+
+### App Architecture
+
+For this application, most of the application’s state is managed by Redux.
+Application’s code is structured and organized in a logical way, and components are modular and reusable.
+
+> Node version used: v.12.19.0
+
+## Quick Start
+
+### Installation
+
+```bash
+---
+git clone https://github.com/amjedidiah/mobile-flashcards.git mobile-flashcards
+cd mobile-flashcards
+yarn install
+yarn run pod-install
+yarn start
+```
+
+### 🚀 How to use
+
 - Open the project in a React runtime to try it:
   - iOS: [Client iOS](https://itunes.apple.com/app/apple-store/id982107779)
   - Android: [Client Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
   - Web: Any web browser
 
-## Adding Native Code
+### Adding Native Code
 
 This project can be run from a web browser or the Expo client app. You may find that you want to add more native code later on. You can do this by ejecting the project and rebuilding it yourself.
 
 - Run `yarn eject` to create the native projects.
 - You can still run your project in the web browser or Expo client, you just won't be able to access any new native modules you add.
 
-## Publishing
+## Contributing
 
-- Deploy the native app to the App store and Play store using this guide: [Deployment](https://docs.expo.io/distribution/app-stores/).
-- Deploy the website using this guide: [Web deployment](https://docs.expo.io/distribution/publishing-websites/).
+Please see [CONTRIBUTING.md](docs/CONTRIBUTING.md)
 
-## 📝 Notes
+## License
 
-- Learn more about [Universal React](https://docs.expo.io/).
-- See what API and components are [available in the React runtimes](https://docs.expo.io/versions/latest/).
-- Find out more about developing apps and websites: [Guides](https://docs.expo.io/guides/).
+This copy of would-you-rather is Copyright © 2021 Jedidiah Amaraegbu. It is free, and may be redistributed under the terms specified in the [LICENSE file](docs/LICENSE)
+
+## About Me
+
+I am passionate about helping businesses and individuals create more value with the web, as well as helping fellow students learn software development.
+
+I recently spoke at a student conference organized by Microsoft Student Partners in South Africa. Currently, I am a Student Ambassador at FlutterWave as well as enrolled in the Udacity React Nanodegree course to update my front-end knowledge and skill
+
+Do you need a website or a web app for your business/idea, a web tutor, or a conference speaker?
+Send me an email: imunacode@gmail.com
+
+Skills: HTML5, React, Redux, Express, Node, PHP, PostgreSQL, MySQL
