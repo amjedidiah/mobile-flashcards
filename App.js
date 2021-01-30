@@ -17,7 +17,6 @@ import {Platform} from 'react-native';
 import {purple, white} from './src/utils/colors';
 import {setLocalNotification} from './src/redux/actions/notifications';
 
-
 const Tab = createBottomTabNavigator();
 
 const Stack = createStackNavigator();
@@ -54,7 +53,6 @@ class App extends React.Component {
    * @return {function}
    */
   componentDidMount = () => store.dispatch(setLocalNotification());
-
 
   /**
    * @return {object} - The UI DOM object
