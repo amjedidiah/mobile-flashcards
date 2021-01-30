@@ -43,6 +43,7 @@
     "lint": "eslint \"src/**/*.js\" --fix || false",
     "check": "yarn prettier && yarn lint",
     "dev": "yarn run check && yarn start",
+    "prestart": "yarn run check",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",

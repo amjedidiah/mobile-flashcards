@@ -7,10 +7,7 @@ import {getDeck, getDeckCardsCount} from '../redux/selectors';
 import {green, purple, red} from '../utils/colors';
 import Form from './Form';
 import {InfoText} from './styled';
-import {
-  saveDeckScore,
-  saveDeckProgress,
-} from '../redux/actions/decks';
+import {saveDeckScore, saveDeckProgress} from '../redux/actions/decks';
 
 /**
  * @component
@@ -58,12 +55,10 @@ class Quiz extends Component {
 
     if (newCurrent >= this.props.deckCardsCount) {
       // Show score
-      this.setState(
-          () => ({
-            done: true,
-            subTitle: `out of ${(this.props.deck?.questions || []).length}`,
-          }),
-      );
+      this.setState(() => ({
+        done: true,
+        subTitle: `out of ${(this.props.deck?.questions || []).length}`,
+      }));
     } else {
       // Continue quiz
       this.props.navigation.push('Quiz', {
