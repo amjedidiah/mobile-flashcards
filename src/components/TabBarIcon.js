@@ -10,9 +10,7 @@ import PropTypes from 'prop-types';
 const TabBarIcon = ({screenName, tintColor}) =>
   ({
     Home: <FontAwesome name="home" size={30} color={tintColor} />,
-  }[screenName] || (
-    <Ionicons name="add" size={30} color={tintColor} />
-  ));
+  }[screenName] || <Ionicons name="add" size={30} color={tintColor} />);
 
 TabBarIcon.propTypes = {
   screenName: PropTypes.string,

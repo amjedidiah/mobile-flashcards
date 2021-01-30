@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {gray} from '../../utils/colors';
 import ButtonGroup from './ButtonGroup';
@@ -8,8 +8,7 @@ import {Input, SubTitle, Title} from '../styled';
 /**
  * Form component
  * @component
- * @param {{title: string, inputCount: number}} props
- * @return {object} - The UI DOM object
+ * @constructor
  * @example
  * const subTitle = ''
  * const title = ''
@@ -23,57 +22,80 @@ import {Input, SubTitle, Title} from '../styled';
  *          buttons={buttons}
  *        ><Text>hello</Text></Form>
  */
-const Form = ({title, inputs, buttons, subTitle, children}) => (
-  <Layout>
-    <Title>{title}</Title>
-    <SubTitle>{subTitle}</SubTitle>
+class Form extends Component {
+  state = {};
 
-    {inputs.map(({name}) => (
-      <Input
-        key={name}
-        placeHolder={name}
-        defaultValue={name}
-        placeHolderTextColor={gray}
-        autoCorrect={true}
-      />
-    ))}
+  static propTypes = {
+    /**
+     * Form buttons
+     */
+    buttons: PropTypes.array,
+    /**
+     * Form children
+     */
+    children: PropTypes.element,
+    /**
+     * Form subTitle
+     */
+    subTitle: PropTypes.string,
+    /**
+     * Form title
+     */
+    title: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    /**
+     * Form inputs
+     */
+    inputs: PropTypes.array,
+  };
 
-    {buttons && <ButtonGroup buttons={buttons} />}
+  static defaultProps = {
+    buttons: [],
+    children: <></>,
+    subTitle: '',
+    title: '',
+    inputs: [],
+  };
 
-    {children}
-  </Layout>
-);
+  componentDidMount = () => {
+    const state = {};
 
-Form.propTypes = {
-  /**
-   * Form buttons
-   */
-  buttons: PropTypes.array,
-  /**
-   * Form children
-   */
-  children: PropTypes.element,
-  /**
-   * Form subTitle
-   */
-  subTitle: PropTypes.string,
-  /**
-   * Form title
-   */
-  title: PropTypes.string,
-  /**
-   * Form inputs
-   */
-  inputs: PropTypes.array,
-};
+    for (let i = 0; i < this.props.inputs.length; i++) {
+      const input = this.props.inputs[i];
 
-Form.defaultProps = {
-  buttons: [],
-  children: <></>,
-  subTitle: '',
-  title: '',
-  inputs: [],
-};
+      state[input.name] = input.name;
+    }
+
+    this.setState(state);
+  };
+
+  render = () => {
+    const {title, inputs, buttons, subTitle, children} = this.props;
+
+    return (
+      <Layout>
+        <Title>{title}</Title>
+        <SubTitle>{subTitle}</SubTitle>
+
+        {inputs.map(({name}) => (
+          <Input
+            key={name}
+            placeHolder={name}
+            placeHolderTextColor={gray}
+            autoCorrect={true}
+            value={this.state[name]}
+            onChangeText={(text) =>
+              this.setState((state) => ({...state, [name]: text}))
+            }
+          />
+        ))}
+
+        {buttons && <ButtonGroup inputs={this.state} buttons={buttons} />}
+
+        {children}
+      </Layout>
+    );
+  };
+}
 
 // Form export
 export default Form;

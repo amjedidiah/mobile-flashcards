@@ -27,7 +27,7 @@ export const Input = styled.TextInput`
   margin-bottom: 10px;
   height: auto;
   width: 170px;
-  border-radius: 10px
+  border-radius: 10px;
 `;
 
 export const InfoText = styled.Text`
@@ -42,6 +42,7 @@ export const SubTitle = styled.Text`
   color: red;
   width: 170px;
   text-align: center;
+  font-size: 20px;
 `;
 
 export const Title = styled.Text`
