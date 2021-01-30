@@ -151,6 +151,5 @@ const mapStateToProps = ({decks}, {route}) => ({
 });
 
 export default connect(mapStateToProps, {
-  
   saveDeckProgress,
 })(Quiz);

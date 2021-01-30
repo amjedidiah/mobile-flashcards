@@ -17,8 +17,4 @@ export const SAVE_DECK_PROGRESS = 'SAVE_DECK_PROGRESS';
 /**
  * @const {string}
  */
-export const SAVE_DECK_SCORE = 'SAVE_DECK_SCORE';
-/**
- * @const {string}
- */
 export const SAVE_NOTIFICATION = 'SAVE_NOTIFICATION';

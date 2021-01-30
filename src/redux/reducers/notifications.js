@@ -4,10 +4,10 @@
  * @param {action} action
  * @return {boolean}
  */
-const notifications = (state = null, { type, notification }) =>
+const notifications = (state = null, {type, notification}) =>
   ({
     SAVE_DECK_PROGRESS: false,
-    SAVE_NOTIFICATION: notification
+    SAVE_NOTIFICATION: notification,
   }[type] || state);
 
 // decks reducer export

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { FlatList, Text } from 'react-native';
+import React, {Component} from 'react';
+import {FlatList, Text} from 'react-native';
 import PropTypes from 'prop-types';
-import { SubTitle, Title } from './styled';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { connect } from 'react-redux';
-import { getDecks } from '../redux/selectors';
+import {SubTitle, Title} from './styled';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import {connect} from 'react-redux';
+import {getDecks} from '../redux/selectors';
 import Form from './Form';
 
 /**
@@ -15,12 +15,12 @@ import Form from './Form';
 class Home extends Component {
   static propTypes = {
     decks: PropTypes.array,
-    navigation: PropTypes.object
+    navigation: PropTypes.object,
   };
 
   static defaultProps = {
     decks: [],
-    navigation: {}
+    navigation: {},
   };
 
   /**
@@ -28,7 +28,7 @@ class Home extends Component {
    * @param {{item: object}} param0
    * @return {object}
    */
-  renderItem = ({ item, index }) => (
+  renderItem = ({item, index}) => (
     <TouchableOpacity
       key={item?.title}
       onPress={() => this.toDeck(item?.title)}
@@ -46,7 +46,7 @@ class Home extends Component {
    * @param {string} title
    * @return {Promise}
    */
-  toDeck = (title) => this.props.navigation.navigate('Deck', { title });
+  toDeck = (title) => this.props.navigation.navigate('Deck', {title});
 
   /**
    * Renders Home UI
@@ -57,7 +57,7 @@ class Home extends Component {
       <FlatList
         data={this.props.decks}
         renderItem={this.renderItem}
-        keyExtractor={({ title }) => title}
+        keyExtractor={({title}) => title}
       />
     ) : (
       <Form
@@ -65,14 +65,14 @@ class Home extends Component {
         buttons={[
           {
             value: 'Add a deck',
-            submit: () => this.props.navigation.navigate('Add Deck')
-          }
+            submit: () => this.props.navigation.navigate('Add Deck'),
+          },
         ]}
       />
     );
   };
 }
 
-const mapStateToProps = ({ decks }) => ({ decks: getDecks(decks) });
+const mapStateToProps = ({decks}) => ({decks: getDecks(decks)});
 
 export default connect(mapStateToProps)(Home);

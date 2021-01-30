@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { gray } from '../../utils/colors';
+import {gray} from '../../utils/colors';
 import ButtonGroup from './ButtonGroup';
 import Layout from '../Layout';
-import { Input, SubTitle, Title } from '../styled';
+import {Input, SubTitle, Title} from '../styled';
 
 /**
  * Form component
@@ -45,7 +45,7 @@ class Form extends Component {
     /**
      * Form inputs
      */
-    inputs: PropTypes.array
+    inputs: PropTypes.array,
   };
 
   static defaultProps = {
@@ -53,7 +53,7 @@ class Form extends Component {
     children: <></>,
     subTitle: '',
     title: '',
-    inputs: []
+    inputs: [],
   };
 
   componentDidMount = () => {
@@ -69,14 +69,14 @@ class Form extends Component {
   };
 
   render = () => {
-    const { title, inputs, buttons, subTitle, children } = this.props;
+    const {title, inputs, buttons, subTitle, children} = this.props;
 
     return (
       <Layout>
         <Title>{title}</Title>
         <SubTitle>{subTitle}</SubTitle>
 
-        {inputs.map(({ name }) => (
+        {inputs.map(({name}) => (
           <Input
             key={name}
             placeHolder={name}
@@ -84,7 +84,7 @@ class Form extends Component {
             autoCorrect={true}
             value={this.state[name]}
             onChangeText={(text) =>
-              this.setState((state) => ({ ...state, [name]: text }))
+              this.setState((state) => ({...state, [name]: text}))
             }
           />
         ))}

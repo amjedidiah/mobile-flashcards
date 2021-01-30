@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { gray } from '../utils/colors';
+import {gray} from '../utils/colors';
 
 export const Button = styled.TouchableOpacity`
   padding-top: 12px;

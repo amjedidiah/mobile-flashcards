@@ -1,13 +1,13 @@
 // Module imports
 import React from 'react';
-import { Text } from 'react-native';
+import {Text} from 'react-native';
 import PropTypes from 'prop-types';
-import { blue, white } from '../../utils/colors';
-import { Button } from '../styled';
+import {blue, white} from '../../utils/colors';
+import {Button} from '../styled';
 
-const Btn = ({ onSubmit, value, style }) => (
-  <Button style={{ backgroundColor: style || blue }} onPress={onSubmit}>
-    <Text style={{ color: white, textAlign: 'center' }}>{value}</Text>
+const Btn = ({onSubmit, value, style}) => (
+  <Button style={{backgroundColor: style || blue}} onPress={onSubmit}>
+    <Text style={{color: white, textAlign: 'center'}}>{value}</Text>
   </Button>
 );
 
@@ -23,13 +23,13 @@ Btn.propTypes = {
   /**
    * Btn value
    */
-  value: PropTypes.string
+  value: PropTypes.string,
 };
 
 Btn.defaultProps = {
   onSubmit: () => {},
   style: '',
-  value: ''
+  value: '',
 };
 
 // Btn export
